@@ -152,16 +152,16 @@ function simpanData() {
     
     nama = $('#nama').val();
     NIM = $('#NIM').val();
-    jumlah = $('#jumlah').val();
+    prodi = $('#prodi').val();
 
     if (!liff.isInClient()) {
         sendAlertIfNotInClient();
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Kakak "+nama+" memesan bakpia dengan jumlah "+jumlah+" !"
+            'text': "Kakak "+nama+" memesan bakpia dengan prodi "+prodi+" !"
         }]).then(function() {
-            alert('Pesanan kak '+nama+' sebanyak '+jumlah+' akan segera diproses');
+            alert('Pesanan kak '+nama+' sebanyak '+prodi+' akan segera diproses');
         }).catch(function(error) {
             alert('Ada error nih');
         });
@@ -178,7 +178,7 @@ function simpanData() {
     }
  
     id_data++;
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'prodi': prodi });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
@@ -192,14 +192,14 @@ function simpanEditData() {
     id_data = $('#eid_data').val();
     nama = $('#enama').val();
     NIM = $('#eNIM').val();
-    jumlah = $('#ejumlah').val();
+    prodi = $('#eprodi').val();
  
     if (!liff.isInClient()) {
         sendAlertIfNotInClient();
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Orderan kak "+nama+" diubah jadi "+jumlah
+            'text': "Orderan kak "+nama+" diubah jadi "+prodi
         }]).then(function() {
             alert('Orderan kak '+nama+' udah diubah');
         }).catch(function(error) {
@@ -208,7 +208,7 @@ function simpanEditData() {
     }
  
  
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'prodi': prodi });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
     gantiMenu('list-orderan');
@@ -248,7 +248,7 @@ function hapusData(id) {
 }
 
 function sendAlertIfNotInClient() {
-    alert('Fungsi ini tidak berjalan pada External Browser, gunakan aplikasi LINE !.');
+    alert('Untuk lebih maksimal gunakan aplikasi LINE !.');
 }
 
 /**

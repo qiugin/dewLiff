@@ -76,13 +76,15 @@
                     <input type="text" class="form-control" id="NIM" name="NIM">
                 </div>
                 <div id="tanggal-group" class="form-group">
-                    <label>Kelas:</label>
-                    <!-- <input type="text" class="form-control" id="jumlah" name="jumlah"> -->
-                    <select id="jumlah" name="jumlah">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
+                    <label>Prodi:</label>
+                    <!-- <input type="text" class="form-control" id="prodi" name="prodi"> -->
+                    <select id="prodi" name="prodi">
+                        <option value="Informatika">Informatika</option>
+                        <option value="Arsitektur">Arsitektur</option>
+                        <option value="Filsafat">Filsafat</option>
+						<option value="Kimia">Kimia</option>
+                        <option value="Sastra">Sastra</option>
+						
                       </select>
                 </div>
                 <input type="button" value="Simpan" onclick="simpanData();" class="btn btn-success btn-small" />
@@ -108,20 +110,22 @@
                     <input type="text" class="form-control" id="eNIM" name="NIM">
                 </div>
                 <div id="tanggal-group" class="form-group">
-                    <label>Kelas:</label>
-                    <!-- <input type="text" class="form-control" id="ejumlah" name="jumlah"> -->
-                    <select id="ejumlah" name="jumlah">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
+                    <label>Prodi:</label>
+                    <!-- <input type="text" class="form-control" id="eprodi" name="prodi"> -->
+                    <select id="eprodi" name="prodi">
+                        <option value="Informatika">Informatika</option>
+                        <option value="Arsitektur">Arsitektur</option>
+                        <option value="Filsafat">Filsafat</option>
+						<option value="Kimia">Kimia</option>
+                        <option value="Sastra">Sastra</option>
+						
                       </select>
                 </div>
                 
-                <input type="button" value="Simpan" onclick="simpanEditData();" class="btn btn-success btn-small" />
-                <input type="reset" value="Reset" onclick="" class="btn btn-warning btn-small" />
+                <input type="button" value="Simpan" onclick="simpanEditData();" class="w3-btn w3-small w3-cyan w3-border w3-round-xlarge" />
+                <input type="reset" value="Reset" onclick="" class="w3-btn w3-small w3-amber w3-border w3-round-xlarge" />
                 <input type="button" value="Cancel" onclick="gantiMenu('list-orderan');"
-                    class="btn btn-warning btn-small" />
+				class="w3-btn w3-small w3-deep-orange w3-border w3-round-xlarge" />
             </form>
         </div>
  
@@ -149,8 +153,8 @@
 						<input type="text" class="form-control" id="lNIM" name="NIM" disabled>
 					</div>
 					<div id="tanggal-group" class="form-group">
-						<label for="disabled">Kelas:</label>
-						<input type="text" class="form-control" id="ljumlah" name="jumlah" disabled>
+						<label for="disabled">Prodi:</label>
+						<input type="text" class="form-control" id="lprodi" name="prodi" disabled>
 					</div>
 					<button onclick="gantiMenu('list-orderan');" class="w3-btn w3-white w3-border w3-border-red w3-round-large">Button</button>
 				</form>

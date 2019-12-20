@@ -14,6 +14,9 @@ th {
     padding: 0px 50px;
     text-align: center;
 }
+tr:nth-child(even) {
+    background-color: #ffd7d7;
+}
 
 #eform-data{
     margin-bottom: 12px;
@@ -57,4 +60,8 @@ button {
  
 .hidden {
     display: none;
+}
+
+.w3-tombol{
+    margin:3px 7px;
 }
