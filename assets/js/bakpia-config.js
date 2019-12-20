@@ -33,7 +33,7 @@ function loadOrderan() {
         }
  
  
-        $('#list-orderan').html(data_app);
+        $('#list-orderan').php(data_app);
         $('#list-orderan').hide();
         $('#list-orderan').fadeIn(100);
     }

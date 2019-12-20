@@ -1,6 +1,6 @@
 window.onload = function() {
     const useNodeJS = false;   // if you are not using a node server, set this value to false
-    const defaultLiffId = "1653655688-VvMd2a8k";   // change the default LIFF value if you are not using a node server
+    const defaultLiffId = "1653655688-BDL7zbr3";   // change the default LIFF value if you are not using a node server
 
     // DO NOT CHANGE THIS
     let myLiffId = "";
@@ -104,7 +104,7 @@ function registerButtonHandlers() {
 
     document.getElementById('openWindowButton').addEventListener('click', function() {
         liff.openWindow({
-            url: 'https://lineliffvaldy.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
+            url: 'https://dewliff.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
             external: true
         });
     });

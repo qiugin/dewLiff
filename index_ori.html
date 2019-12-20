@@ -2,12 +2,12 @@
 <html>
  
 <head>
-    <title>Toko Bakpia</title>
+    <title>dqLiff</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
  
     <!-- <style>
@@ -19,53 +19,58 @@
  
 </head>
  
-<body>
+<body onload="loadOrderan();">
  
-    <div class="container" ng-controller="listContactCtrl">
-            <div class="page-header">
-
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <div class="col-xs-12 col-md-8 col-md-offset-2" ng-controller="listContactCtrl">
+        <div class="page-header">
+            
+            <!-- navbar -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
                     </button>
-                
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                        </li>
-                    </div>
-                </nav>
-    
-            </div>
+                    <a class="navbar-brand" href="index.html">Brand</a>
+                  </div>
+              
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      <li><a href="about.html">About</a></li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+            <!-- akhir navbar -->
 
 
-        <div class="d-flex justify-content-center">
-            <a class="badge badge-primary" id="nav-list-orderan" href="javascript:void(0);" onclick="gantiMenu('list-orderan');">List Orderan</a>
-            <a class="badge badge-success" id="nav-pre-order" href="javascript:void(0);" onclick="gantiMenu('pre-order');">Pre Order</a>
+            <ul class="nav nav-pills">
+                <li><a id="nav-daftar-siswa" href="javascript:void(0);" onclick="gantiMenu('daftar-siswa');">Daftar Siswa</a></li>
+                <li><a id="nav-tambah-siswa" href="javascript:void(0);" onclick="gantiMenu('tambah-siswa');">Tambah Siswa</a></li>
+            </ul>
+ 
         </div>
-
-
-
-        <div id="pre-order" class="well" style="display:none;">
+        <div id="tambah-siswa" class="well" style="display:none;">
             <form id="form-data">
                 <div id="nama-group" class="form-group">
                     <label>Nama:</label>
                     <input type="text" class="form-control" id="nama" name="nama">
                 </div>
+                <div id="nim-group" class="form-group">
+                    <label>NIM:</label>
+                    <input type="text" class="form-control" id="NIM" name="NIM">
+                </div>
                 <div id="kelas-group" class="form-group">
                     <label>kelas:</label>
                     <input type="text" class="form-control" id="kelas" name="kelas">
                 </div>
-                <div id="tanggal-group" class="form-group">
-                    <label>NIM:</label>
-                    <input type="text" class="form-control" id="jumlah" name="jumlah">
-                </div>
-                <input type="button" value="Simpan" onclick="simpanData();" class="btn btn-success btn-small" />
+                
+                <input type="button" value="Simpan" onclick="simpanData();" class="btn btn-danger btn-small" />
                 <input type="reset" value="Reset" onclick="" class="btn btn-warning btn-small" />
             </form>
         </div>
@@ -82,18 +87,18 @@
                     <label>Nama:</label>
                     <input type="text" class="form-control" id="enama" name="nama">
                 </div>
-                <div id="kelas-group" class="form-group">
-                    <label>Kelas:</label>
-                    <input type="text" class="form-control" id="ekelas" name="kelas">
-                </div>
-                <div id="tanggal-group" class="form-group">
+                <div id="nim-group" class="form-group">
                     <label>NIM:</label>
-                    <input type="text" class="form-control" id="ejumlah" name="jumlah">
+                    <input type="text" class="form-control" id="eNIM" name="NIM">
+                </div>
+                <div id="kelas-group" class="form-group">
+                    <label>kelas:</label>
+                    <input type="text" class="form-control" id="ekelas" name="kelas">
                 </div>
                 
                 <input type="button" value="Simpan" onclick="simpanEditData();" class="btn btn-success btn-small" />
                 <input type="reset" value="Reset" onclick="" class="btn btn-warning btn-small" />
-                <input type="button" value="Cancel" onclick="gantiMenu('list-orderan');"
+                <input type="button" value="Cancel" onclick="gantiMenu('daftar-siswa');"
                     class="btn btn-warning btn-small" />
             </form>
         </div>
@@ -110,21 +115,20 @@
                     <label for="disabled">Nama:</label>
                     <input type="text" class="form-control" id="lnama" name="nama" disabled>
                 </div>
+                <div id="nim-group" class="form-group">
+                    <label for="disabled">NIM:</label>
+                    <input type="text" class="form-control" id="lNIM" name="NIM" disabled>
+                </div>
                 <div id="kelas-group" class="form-group">
-                    <label for="disabled">Kelas:</label>
+                    <label for="disabled">kelas:</label>
                     <input type="text" class="form-control" id="lkelas" name="kelas" disabled>
                 </div>
-                <div id="tanggal-group" class="form-group">
-                    <label for="disabled">NIM:</label>
-                    <input type="text" class="form-control" id="ljumlah" name="jumlah" disabled>
-                </div>
-                <input type="button" value="Kembali" onclick="gantiMenu('list-orderan');"
+                <input type="button" value="Kembali" onclick="gantiMenu('daftar-siswa');"
                     class="btn btn-warning btn-small" />
             </form>
         </div>
  
-        <div id="list-orderan" class="well">
-            
+        <div id="daftar-siswa" class="well">
         </div>
  
         <!--Konten LIFF v2-->
@@ -177,6 +181,7 @@
         <div id="nodeLiffIdErrorMessage" class="hidden">
             <p>Variable yang dikirim dari LIFF ga kebaca nih.</p>
         </div>
+        
     </div>
 </body>
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
