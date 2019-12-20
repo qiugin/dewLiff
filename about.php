@@ -1,3 +1,13 @@
+<?php
+    session_start();
+
+    // check apakah session username sudah ada atau belum.
+    // jika belum maka akan diredirect ke halaman index (login)
+    if( empty($_SESSION['username']) ){
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE HTML>
 <html>
  
@@ -59,7 +69,7 @@
                 <h3>DEWA QINTORO</h3>
                 </header>
                 <div class="w3-container" style="margin:30px 0px">
-                    <img src="profil.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                    <img src="assets/img/profil.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
                     <p>DewLiff merupakan Website managemen data mahasiswa</p><br>
                 </div>
                 <a href="https://WWW.instagram.com"><button class="w3-button w3-block w3-pink">Instagram</button></a>

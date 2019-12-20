@@ -40,9 +40,9 @@ if(isset($_POST['submit'])){
 
         <form name="form" action="" id="loginF" method="post" >
 
-            <p>Username</p>
+            <p>Username (dew)</p>
             <input type="text" id="username" name="username" placeholder="Enter Username">
-            <p>Password</p>
+            <p>Password (dew)</p>
             <input type="password" id="password" name="password" placeholder="Enter Password">
 
             <p>&nbsp;</p>

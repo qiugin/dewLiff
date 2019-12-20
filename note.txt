@@ -1,2 +1,0 @@
-pre-order -> tambah-mhs
-list-orderan -> daftar-mhs

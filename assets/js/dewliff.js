@@ -1,4 +1,4 @@
-function loadOrderan() {
+function loadMhs() {
     if (localStorage.list_data && localStorage.id_data) {
         list_data = JSON.parse(localStorage.getItem('list_data'));
         var data_app = "";
@@ -133,14 +133,14 @@ function hapusData(id) {
         }
  
         localStorage.setItem('list_data', JSON.stringify(list_data));
-        loadOrderan();
+        loadMhs();
     }
 }
  
  
 function gantiMenu(menu) {
     if (menu == "daftar-mhs") {
-        loadOrderan();
+        loadMhs();
         $('#tambah-mhs').hide();
         $('#daftar-mhs').fadeIn();
         $('#edit-data').hide();

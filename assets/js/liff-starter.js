@@ -104,7 +104,7 @@ function registerButtonHandlers() {
 
     document.getElementById('openWindowButton').addEventListener('click', function() {
         liff.openWindow({
-            url: 'https://dewliff.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
+            url: 'https://dewliff.herokuapp.com/',
             external: true
         });
     });
@@ -136,11 +136,11 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': "Hey, seseorang menggunakan fitur send message lhoo!"
+                'text': "Fitur kirim pesan telah digunakan"
             }]).then(function() {
-                window.alert('Ini adalah pesan dari fitur Send Message');
+                window.alert('Ini adalah pesan dari fitur kirim pesan');
             }).catch(function(error) {
-                window.alert('Error sending message: ' + error);
+                window.alert('Gagal mengirim pesan: ' + error);
             });
         }
     });
@@ -243,7 +243,7 @@ function hapusData(id) {
         }
  
         localStorage.setItem('list_data', JSON.stringify(list_data));
-        loadOrderan();
+        loadMhs();
     }
 }
 
