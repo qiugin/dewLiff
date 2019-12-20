@@ -159,9 +159,9 @@ function simpanData() {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Kakak "+nama+" memesan bakpia dengan prodi "+prodi+" !"
+            'text': "Menambah data mahasiswa"
         }]).then(function() {
-            alert('Pesanan kak '+nama+' sebanyak '+prodi+' akan segera diproses');
+            alert('Inputan data berhasil');
         }).catch(function(error) {
             alert('Ada error nih');
         });
@@ -182,7 +182,7 @@ function simpanData() {
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
-    gantiMenu('list-orderan');
+    gantiMenu('daftar-mhs');
  
     return false;
 }
@@ -199,11 +199,11 @@ function simpanEditData() {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Orderan kak "+nama+" diubah jadi "+prodi
+            'text': "data dirubah"
         }]).then(function() {
-            alert('Orderan kak '+nama+' udah diubah');
+            alert('data berhasil dirubah');
         }).catch(function(error) {
-            alert('Maaf kak '+nama+' Ada error nih -_-');
+            alert('Ada error slur, coba cek lagi slur');
         });
     }
  
@@ -211,7 +211,7 @@ function simpanEditData() {
     list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'prodi': prodi });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
-    gantiMenu('list-orderan');
+    gantiMenu('daftar-mhs');
  
     return false;
 }
@@ -223,11 +223,11 @@ function hapusData(id) {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Orderan kak "+nama+" dibatalkan"
+            'text': "data mahasiswa "+nama+" dihapus"
         }]).then(function() {
-            alert('Orderan dibatalkan');
+            alert('Data berhasil dihapus');
         }).catch(function(error) {
-            alert('Ada error -_-');
+            alert('Gagal menghapus -_-');
         });
     }
  

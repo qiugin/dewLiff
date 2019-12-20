@@ -47,15 +47,15 @@
             <div>
                 <h3>DewLiff merupakan Website managemen data mahasiswa</h3>
                 <p>
-                    <a href="javascript:void(0);" id="nav-list-orderan" class="w3-button w3-teal w3-border-red w3-round-large" onclick="gantiMenu('list-orderan');" role="button">Daftar Mahasiswa</a>
-                    <a href="javascript:void(0);" id="nav-pre-order" class="w3-button w3-indigo w3-border-red w3-round-large" onclick="gantiMenu('pre-order');" role="button">Tambah Mahasiswa</a>
+                    <a href="javascript:void(0);" id="nav-daftar-mhs" class="w3-button w3-teal w3-border-red w3-round-large" onclick="gantiMenu('daftar-mhs');" role="button">Daftar Mahasiswa</a>
+                    <a href="javascript:void(0);" id="nav-tambah-mhs" class="w3-button w3-indigo w3-border-red w3-round-large" onclick="gantiMenu('tambah-mhs');" role="button">Tambah Mahasiswa</a>
                 </p>
             </div>
  
         </div>
 
 
-        <div id="pre-order" class="well" style="display:none;">
+        <div id="tambah-mhs" class="well" style="display:none;">
             <form id="form-data">
                 <div id="nama-group" class="form-group">
                     <label>Nama:</label>
@@ -67,7 +67,6 @@
                 </div>
                 <div id="tanggal-group" class="form-group">
                     <label>Prodi:</label>
-                    <!-- <input type="text" class="form-control" id="prodi" name="prodi"> -->
                     <select id="prodi" name="prodi">
                         <option value="Informatika">Informatika</option>
                         <option value="Arsitektur">Arsitektur</option>
@@ -101,7 +100,6 @@
                 </div>
                 <div id="tanggal-group" class="form-group">
                     <label>Prodi:</label>
-                    <!-- <input type="text" class="form-control" id="eprodi" name="prodi"> -->
                     <select id="eprodi" name="prodi">
                         <option value="Informatika">Informatika</option>
                         <option value="Arsitektur">Arsitektur</option>
@@ -114,7 +112,7 @@
                 
                 <input type="button" value="Simpan" onclick="simpanEditData();" class="w3-btn w3-small w3-cyan w3-border w3-round-xlarge" />
                 <input type="reset" value="Reset" onclick="" class="w3-btn w3-small w3-amber w3-border w3-round-xlarge" />
-                <input type="button" value="Cancel" onclick="gantiMenu('list-orderan');"
+                <input type="button" value="Cancel" onclick="gantiMenu('daftar-mhs');"
 				class="w3-btn w3-small w3-deep-orange w3-border w3-round-xlarge" />
             </form>
         </div>
@@ -123,51 +121,44 @@
 
 		<div id="lihat-data" class="well" style="display:none;">
 
-
 			<div class="w3-card-4">
 				<img style="width: 70%;" src="background.jpg" alt="Alps">
 				<div class="w3-container w3-center w3-tengah">
-				  <form id="eform-data">
- 
-					<div id="nama-group" class="form-group" style="display:none;">
-						<label for="disabled">id data:</label>
-						<input type="text" class="form-control" id="lid_data" name="nama" disabled>
-					</div>
-	 
-					<div id="nama-group" class="form-group">
-						<label for="disabled">Nama:</label>
-						<input type="text" class="form-control" id="lnama" name="nama" disabled>
-					</div>
-					<div id="NIM-group" class="form-group">
-						<label for="disabled">NIM:</label>
-						<input type="text" class="form-control" id="lNIM" name="NIM" disabled>
-					</div>
-					<div id="tanggal-group" class="form-group">
-						<label for="disabled">Prodi:</label>
-						<input type="text" class="form-control" id="lprodi" name="prodi" disabled>
-					</div>
-					<button onclick="gantiMenu('list-orderan');" class="w3-btn w3-white w3-border w3-border-red w3-round-large">Button</button>
-				</form>
+					<form id="eform-data">
+	
+						<div id="nama-group" class="form-group" style="display:none;">
+							<label for="disabled">id data:</label>
+							<input type="text" class="form-control" id="lid_data" name="nama" disabled>
+						</div>
+		
+						<div id="nama-group" class="form-group">
+							<label for="disabled">Nama:</label>
+							<input type="text" class="form-control" id="lnama" name="nama" disabled>
+						</div>
+
+						<div id="NIM-group" class="form-group">
+							<label for="disabled">NIM:</label>
+							<input type="text" class="form-control" id="lNIM" name="NIM" disabled>
+						</div>
+
+						<div id="tanggal-group" class="form-group">
+							<label for="disabled">Prodi:</label>
+							<input type="text" class="form-control" id="lprodi" name="prodi" disabled>
+						</div>
+						<button onclick="gantiMenu('daftar-mhs');" class="w3-btn w3-white w3-border w3-border-red w3-round-large">Button</button>
+					</form>
 				</div>
 			  </div>
-
-			  
-
             
 		</div>
 		
-
-
-
-
         <!-- menampilkan data -->
-        <div id="list-orderan" class="well">
+        <div id="daftar-mhs" class="well">
             
         </div>
         <!-- akhir menampilkan data -->
  
         <!--Konten LIFF v2-->
- 
         <div id="liffAppContent">
  
             <!-- LIFF DATA -->
@@ -183,15 +174,14 @@
                         <td id="isLoggedIn" class="textLeft"></td>
                     </tr>
                 </table>
-            </div>
+			</div>
+			
             <!-- LOGIN LOGOUT BUTTONS -->
             <div class="buttonGroup">
-				<!-- <button id="liffLoginButton" class="btn btn-success btn-small">Log in</button> -->
 				<button id="liffLoginButton" class="w3-btn w3-small w3-cyan w3-border w3-round-xlarge">Masuk</button>
 				<button id="liffLogoutButton" class="w3-btn w3-small w3-red w3-border w3-round-xlarge">Keluar</button>
-
-                <!-- <button id="liffLogoutButton" class="btn btn-warning btn-small">Log out</button> -->
-            </div>
+			</div>
+			
             <!-- ACTION BUTTONS -->
             <div class="buttonGroup">
                 <div class="buttonRow">
@@ -209,15 +199,15 @@
         </div>
         <!-- LIFF ID ERROR -->
         <div id="liffIdErrorMessage" class="hidden">
-            <p>Ada error nih. pastiin ID LIFF kamu dimasukan yaa.</p>
+            <p>Ada error Slur. cek lagi ID LIFFnya !!!</p>
         </div>
         <!-- LIFF INIT ERROR -->
         <div id="liffInitErrorMessage" class="hidden">
-            <p>Ada error nih, pastikan ID sama dengan aplikasi LIFF nya yaa </p>
+            <p>Ada error Slur, cek lagi ID LIFFnya !!!</p>
         </div>
         <!-- NODE.JS LIFF ID ERROR -->
         <div id="nodeLiffIdErrorMessage" class="hidden">
-            <p>Variable yang dikirim dari LIFF ga kebaca nih.</p>
+            <p>Variable yang dikirim dari LIFF ga kebaca Slur.</p>
         </div>
         
     </div>
@@ -225,95 +215,42 @@
 <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 <script src="assets/js/dewliff.js"></script>
 <script src="assets/js/liff-starter.js"></script>
+<!-- untuk langsung meLoad data saat pertama kali dibuka -->
 <script>
     loadOrderan()
 </script>
 
-<script>
-    function sortTable() {
-      var table, rows, switching, i, x, y, shouldSwitch;
-      table = document.getElementById("myTable");
-      switching = true;
-      /*Make a loop that will continue until
-      no switching has been done:*/
-      while (switching) {
-        //start by saying: no switching is done:
-        switching = false;
-        rows = table.rows;
-        /*Loop through all table rows (except the
-        first, which contains table headers):*/
-        for (i = 1; i < (rows.length - 1); i++) {
-          //start by saying there should be no switching:
-          shouldSwitch = false;
-          /*Get the two elements you want to compare,
-          one from current row and one from the next:*/
-          x = rows[i].getElementsByTagName("TD")[0];
-          y = rows[i + 1].getElementsByTagName("TD")[0];
-          //check if the two rows should switch place:
-          if (Number(x.innerHTML) > Number(y.innerHTML)) {
-            //if so, mark as a switch and break the loop:
-            shouldSwitch = true;
-            break;
-          }
-        }
-        if (shouldSwitch) {
-          /*If a switch has been marked, make the switch
-          and mark that a switch has been done:*/
-          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-          switching = true;
-        }
-      }
-    }
-</script>
-
+<!-- script untuk mengurutkan data -->
 <script>
     function sortHead(n) {
       var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
       table = document.getElementById("myTable");
       switching = true;
-      //Set the sorting direction to ascending:
       dir = "asc"; 
-      /*Make a loop that will continue until
-      no switching has been done:*/
       while (switching) {
-        //start by saying: no switching is done:
         switching = false;
         rows = table.rows;
-        /*Loop through all table rows (except the
-        first, which contains table headers):*/
         for (i = 1; i < (rows.length - 1); i++) {
-          //start by saying there should be no switching:
           shouldSwitch = false;
-          /*Get the two elements you want to compare,
-          one from current row and one from the next:*/
           x = rows[i].getElementsByTagName("TD")[n];
           y = rows[i + 1].getElementsByTagName("TD")[n];
-          /*check if the two rows should switch place,
-          based on the direction, asc or desc:*/
           if (dir == "asc") {
             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-              //if so, mark as a switch and break the loop:
               shouldSwitch= true;
               break;
             }
           } else if (dir == "desc") {
             if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-              //if so, mark as a switch and break the loop:
               shouldSwitch = true;
               break;
             }
           }
         }
         if (shouldSwitch) {
-          /*If a switch has been marked, make the switch
-          and mark that a switch has been done:*/
           rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
           switching = true;
-          //Each time a switch is done, increase this count by 1:
           switchcount ++;      
         } else {
-          /*If no switching has been done AND the direction is "asc",
-          set the direction to "desc" and run the while loop again.*/
           if (switchcount == 0 && dir == "asc") {
             dir = "desc";
             switching = true;
@@ -321,5 +258,5 @@
         }
       }
     }
-    </script>
+</script>
 </html>

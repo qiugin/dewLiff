@@ -33,9 +33,9 @@ function loadOrderan() {
         }
  
  
-        $('#list-orderan').html(data_app);
-        $('#list-orderan').hide();
-        $('#list-orderan').fadeIn(100);
+        $('#daftar-mhs').html(data_app);
+        $('#daftar-mhs').hide();
+        $('#daftar-mhs').fadeIn(100);
     }
 }
  
@@ -100,7 +100,7 @@ function simpanData() {
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
-    gantiMenu('list-orderan');
+    gantiMenu('daftar-mhs');
  
     return false;
 }
@@ -114,7 +114,7 @@ function simpanEditData() {
     list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'prodi': prodi });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
-    gantiMenu('list-orderan');
+    gantiMenu('daftar-mhs');
  
     return false;
 }
@@ -139,27 +139,27 @@ function hapusData(id) {
  
  
 function gantiMenu(menu) {
-    if (menu == "list-orderan") {
+    if (menu == "daftar-mhs") {
         loadOrderan();
-        $('#pre-order').hide();
-        $('#list-orderan').fadeIn();
+        $('#tambah-mhs').hide();
+        $('#daftar-mhs').fadeIn();
         $('#edit-data').hide();
         $('#lihat-data').hide();
     }
-    else if (menu == "pre-order") {
-        $('#pre-order').fadeIn();
-        $('#list-orderan').hide();
+    else if (menu == "tambah-mhs") {
+        $('#tambah-mhs').fadeIn();
+        $('#daftar-mhs').hide();
         $('#edit-data').hide();
         $('#lihat-data').hide();
     } else if (menu == "edit-data") {
         $('#edit-data').fadeIn();
-        $('#pre-order').hide();
-        $('#list-orderan').hide();
+        $('#tambah-mhs').hide();
+        $('#daftar-mhs').hide();
         $('#lihat-data').hide();
     } else if (menu == "lihat-data") {
         $('#lihat-data').fadeIn();
         $('#edit-data').hide();
-        $('#pre-order').hide();
-        $('#list-orderan').hide();
+        $('#tambah-mhs').hide();
+        $('#daftar-mhs').hide();
     }
 }
