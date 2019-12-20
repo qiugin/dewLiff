@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
 
     // validasi login benar atau salah
-    if($username == 'dew@gmail.com' AND $password == 'dew'){
+    if($username == 'dew' AND $password == 'dew'){
 
         // jika login benar maka username akan disimpan ke session kemudian akan di redirect ke halaman index
         $_SESSION['username'] = $username;
@@ -28,20 +28,39 @@ if(isset($_POST['submit'])){
 
 ?>
 
-<!DOCTYPE html>
+<html>
 <head>
-    <title>DewLiff - Login</title>
+    <title>E-learnign SDn 1 Minomartani</title>
+    <link rel="stylesheet" href="assets/css/login.css">  
 </head>
-<body>
+    <body>
+    <div class="login-box">
+    <img src="assets/img/e.png" class="avatar">
+        <h1>Masuk Sebagai Siswa</h1>
 
-    <h3>Silakan Login</h3>
+        <form name="form" action="cek_login.php" id="loginF" method="post" >
 
-    <form method="POST" action="">
-        Username : <input type="text" name="username"><br>
-        Password : <input type="password" name="password"><br>
-        <?php echo $form_error; ?>
-        <input type="submit" name="submit" value="Login">
-    </form>
+            <p>Username</p>
+            <input type="text" id="username" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" id="password" name="password" placeholder="Enter Password">
+
+            
+                    <p>Belum punya akun ? daftar<p/> <a href="register.php">disini</a>
+            
+            <!-- <hr/> -->
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p></p>
+            <?php echo $form_error; ?>
+            <input type="submit" name="submit" value="Login">
+            <!-- <a href="#">Forget Password</a>     -->
+        </form>
+        
+        
+        </div>
+      
     
-</body>
+    </body>
 </html>
