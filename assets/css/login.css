@@ -13,7 +13,7 @@ body{
     height: 520px;
     /* background: rgba(1, 82, 48, 0.5); */
      /*background: #00cec9; */
-    background: url(bg.png);
+    background: url(../img/bg.png);
     opacity: 100%;
     color: #fff;
     top: 50%;
