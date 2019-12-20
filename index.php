@@ -14,7 +14,7 @@
 <html>
  
 <head>
-    <title>Toko Bakpia</title>
+    <title>DewLiff</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -65,8 +65,8 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <a class="badge badge-primary" id="nav-list-orderan" href="javascript:void(0);" onclick="gantiMenu('list-orderan');">List Orderan</a>
-            <a class="badge badge-success" id="nav-pre-order" href="javascript:void(0);" onclick="gantiMenu('pre-order');">Pre Order</a>
+            <a class="badge badge-primary" id="nav-list-orderan" href="javascript:void(0);" onclick="gantiMenu('list-orderan');">Daftar Mahasiswa</a>
+            <a class="badge badge-success" id="nav-pre-order" href="javascript:void(0);" onclick="gantiMenu('pre-order');">Tambah Mahasiswa</a>
         </div>
 
 
