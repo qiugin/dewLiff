@@ -1,70 +1,76 @@
-<?php
-    session_start();
-
-    // check apakah session username sudah ada atau belum.
-    // jika belum maka akan diredirect ke halaman index (login)
-    if( empty($_SESSION['username']) ){
-        header('Location: login.php');
-    }
-?>
-
-
 <!DOCTYPE HTML>
 <html>
  
 <head>
-    <title>Toko Bakpia</title>
+    <title>DewLiff</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/style.css">
- 
-    <!-- <style>
-        .table>thead>tr>th {
-            padding: 60px;
-        }
-    </style> -->
  
  
 </head>
  
 <body>
  
-    <div class="container" ng-controller="listContactCtrl">
+    <div class="col-xs-12 col-md-8 col-md-offset-2" ng-controller="listContactCtrl">
         <div class="page-header">
-			<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;"">
-						
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-			
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="about.php">About</a>
-					</li>
-				</div>
 
-				<form class="form-inline my-2 my-lg-0">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="logout.php">LogOut</a></button>
-				</form>
-			</nav>
+            <nav class="navbar navbar-default" style="background-color: #e3f2fd;">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">DewLiff</a>
+                  </div>
+              
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      
+                      <li><a href="index.php">Home</a></li>
+                      <li><a href="about.php">About Me</a></li>
+                    </ul>
+   
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="logout.php">LogOut</a></li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
         </div>
+        
 
 
-        <div>
-            <h3> Hallo Selamat Datang <?php echo $_SESSION['email']; ?> </h3>
+
+        <div class="w3-container">
+
+            <div class="w3-card-4" style="width:70%">
+                <header class="w3-container w3-light-grey">
+                <h3>DEWA QINTORO</h3>
+                </header>
+                <div class="w3-container" style="margin:30px 0px">
+                    <img src="profil.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                    <p>DewLiff merupakan Website managemen data mahasiswa</p><br>
+                </div>
+                <a href="https://WWW.instagram.com"><button class="w3-button w3-block w3-pink">Instagram</button></a>
+                <a href="https://WWW.facebook.com"><button class="w3-button w3-block w3-blue">Facebook</button></a>
+
+            </div>
         </div>
 
     </div>
 </body>
-<script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
-<script src="assets/js/bakpia-config.js"></script>
-<script src="assets/js/liff-starter.js"></script>
+
+
 
 </html>

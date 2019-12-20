@@ -19,9 +19,9 @@ function loadOrderan() {
                     '<td>' + list_data[i].nama + ' </td>' +
                     '<td>' + list_data[i].NIM + ' </td>' +
                     '<td>' + list_data[i].jumlah + ' </td>' +
-                    '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>' +
-                    '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="lihatData(\'' + list_data[i].id_data + '\')">Lihat</a></td>' +
-                    '<td><a class="btn btn-warning btn-small" href="javascript:void(0)" onclick="editData(\'' + list_data[i].id_data + '\')">Edit</a></td>';
+                    '<td><a class="w3-btn w3-small w3-orange w3-border w3-round-xlarge" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>' +
+                    '<td><a class="w3-btn w3-small w3-blue w3-border w3-round-xlarge" href="javascript:void(0)" onclick="lihatData(\'' + list_data[i].id_data + '\')">Lihat</a></td>' +
+                    '<td><a class="w3-btn w3-small w3-green w3-border w3-round-xlarge" href="javascript:void(0)" onclick="editData(\'' + list_data[i].id_data + '\')">Edit</a></td>';
                 data_app += '</tr>';
             }
  

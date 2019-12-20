@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/style.css">
  
     <!-- <style>
@@ -25,7 +26,7 @@
     <div class="col-xs-12 col-md-8 col-md-offset-2" ng-controller="listContactCtrl">
         <div class="page-header">
 
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default" style="background-color: #e3f2fd;">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
@@ -56,8 +57,8 @@
             <div>
                 <h3>DewLiff merupakan Website managemen data mahasiswa</h3>
                 <p>
-                    <a href="javascript:void(0);" id="nav-list-orderan" class="btn btn-primary" onclick="gantiMenu('list-orderan');" role="button">Daftar Mahasiswa</a>
-                    <a href="javascript:void(0);" id="nav-pre-order" class="btn btn-default" onclick="gantiMenu('pre-order');" role="button">Tambah Mahasiswa</a>
+                    <a href="javascript:void(0);" id="nav-list-orderan" class="w3-button w3-teal w3-border-red w3-round-large" onclick="gantiMenu('list-orderan');" role="button">Daftar Mahasiswa</a>
+                    <a href="javascript:void(0);" id="nav-pre-order" class="w3-button w3-indigo w3-border-red w3-round-large" onclick="gantiMenu('pre-order');" role="button">Tambah Mahasiswa</a>
                 </p>
             </div>
  
@@ -124,30 +125,46 @@
             </form>
         </div>
  
-        <div id="lihat-data" class="well" style="display:none;">
-            <form id="eform-data">
+
+
+		<div id="lihat-data" class="well" style="display:none;">
+
+
+			<div class="w3-card-4">
+				<img style="width: 70%;" src="background.jpg" alt="Alps">
+				<div class="w3-container w3-center w3-tengah">
+				  <form id="eform-data">
  
-                <div id="nama-group" class="form-group" style="display:none;">
-                    <label for="disabled">id data:</label>
-                    <input type="text" class="form-control" id="lid_data" name="nama" disabled>
-                </div>
- 
-                <div id="nama-group" class="form-group">
-                    <label for="disabled">Nama:</label>
-                    <input type="text" class="form-control" id="lnama" name="nama" disabled>
-                </div>
-                <div id="NIM-group" class="form-group">
-                    <label for="disabled">NIM:</label>
-                    <input type="text" class="form-control" id="lNIM" name="NIM" disabled>
-                </div>
-                <div id="tanggal-group" class="form-group">
-                    <label for="disabled">Kelas:</label>
-                    <input type="text" class="form-control" id="ljumlah" name="jumlah" disabled>
-                </div>
-                <input type="button" value="Kembali" onclick="gantiMenu('list-orderan');"
-                    class="btn btn-warning btn-small" />
-            </form>
-        </div>
+					<div id="nama-group" class="form-group" style="display:none;">
+						<label for="disabled">id data:</label>
+						<input type="text" class="form-control" id="lid_data" name="nama" disabled>
+					</div>
+	 
+					<div id="nama-group" class="form-group">
+						<label for="disabled">Nama:</label>
+						<input type="text" class="form-control" id="lnama" name="nama" disabled>
+					</div>
+					<div id="NIM-group" class="form-group">
+						<label for="disabled">NIM:</label>
+						<input type="text" class="form-control" id="lNIM" name="NIM" disabled>
+					</div>
+					<div id="tanggal-group" class="form-group">
+						<label for="disabled">Kelas:</label>
+						<input type="text" class="form-control" id="ljumlah" name="jumlah" disabled>
+					</div>
+					<button onclick="gantiMenu('list-orderan');" class="w3-btn w3-white w3-border w3-border-red w3-round-large">Button</button>
+				</form>
+				</div>
+			  </div>
+
+			  
+
+            
+		</div>
+		
+
+
+
 
         <!-- menampilkan data -->
         <div id="list-orderan" class="well">
@@ -175,8 +192,11 @@
             </div>
             <!-- LOGIN LOGOUT BUTTONS -->
             <div class="buttonGroup">
-                <button id="liffLoginButton" class="btn btn-success btn-small">Log in</button>
-                <button id="liffLogoutButton" class="btn btn-warning btn-small">Log out</button>
+				<!-- <button id="liffLoginButton" class="btn btn-success btn-small">Log in</button> -->
+				<button id="liffLoginButton" class="w3-btn w3-small w3-cyan w3-border w3-round-xlarge">Masuk</button>
+				<button id="liffLogoutButton" class="w3-btn w3-small w3-red w3-border w3-round-xlarge">Keluar</button>
+
+                <!-- <button id="liffLogoutButton" class="btn btn-warning btn-small">Log out</button> -->
             </div>
             <!-- ACTION BUTTONS -->
             <div class="buttonGroup">
