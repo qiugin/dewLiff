@@ -30,13 +30,13 @@ if(isset($_POST['submit'])){
 
 <html>
 <head>
-    <title>E-learnign SDn 1 Minomartani</title>
+    <title>DewLiff - Login</title>
     <link rel="stylesheet" href="assets/css/login.css">  
 </head>
     <body>
     <div class="login-box">
     <img src="assets/img/e.png" class="avatar">
-        <h1>Masuk Sebagai Siswa</h1>
+        <h1>Masuk Sebagai Admin</h1>
 
         <form name="form" action="" id="loginF" method="post" >
 
@@ -45,17 +45,10 @@ if(isset($_POST['submit'])){
             <p>Password</p>
             <input type="password" id="password" name="password" placeholder="Enter Password">
 
-            
-                    <p>Belum punya akun ? daftar<p/> <a href="register.php">disini</a>
-            
-            <!-- <hr/> -->
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
             <p>&nbsp;</p>
             <p></p>
             <?php echo $form_error; ?>
             <input type="submit" name="submit" value="Login">
-            <!-- <a href="#">Forget Password</a>     -->
         </form>
         
         
