@@ -118,7 +118,7 @@
                     <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
                 </ol>
             </code>
-            <p>If you are using any other platform, please add your LIFF ID in the <code>index.php</code> file.</p>
+            <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
             <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
         </div>
         <!-- LIFF INIT ERROR -->

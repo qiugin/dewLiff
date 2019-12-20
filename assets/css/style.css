@@ -1,12 +1,11 @@
 html {
-    font-size: 14px;
+    font-size: 11px;
 }
  
 table {
-    width: 50% !important; 
+    width: 100%;
     overflow-x: auto;
     display: block;
-    margin: auto;
 }
  
 div {
@@ -15,7 +14,7 @@ div {
 }
  
 th {
-    text-align: center;
+    text-align: left;
 }
  
 img { 
@@ -23,14 +22,6 @@ img {
     height: auto; 
 }
  
-
-
-.badge{
-    padding: 10px;
-    margin: 10px;
-}
-
-
 button {
     margin: 4px;
 }

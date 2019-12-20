@@ -3,13 +3,14 @@ function loadOrderan() {
         list_data = JSON.parse(localStorage.getItem('list_data'));
         var data_app = "";
         if (list_data.length > 0) {
-            data_app = '<table class="table table-striped table-bordered table-hover">';
+            data_app = '<table class="table table-striped table-dark">';
             data_app += '<thead>' +
                 '<th>ID</th>' +
-                '<th style="width:35%">Nama</th>' +
-                '<th >Kelas</th>' +
+                '<th>Nama</th>' +
                 '<th>Jumlah</th>' +
-                '<th colspan="3">Aksi</th>' +
+                '<th>Hapus Agenda</th>' +
+                '<th>Lihat Agenda</th>' +
+                '<th>Edit Agenda</th>' +
                 '</thead> <tbody>';
  
             for (i in list_data) {
@@ -17,7 +18,6 @@ function loadOrderan() {
                 data_app +=
                     '<td>' + list_data[i].id_data + ' </td>' +
                     '<td>' + list_data[i].nama + ' </td>' +
-                    '<td>' + list_data[i].kelas + ' </td>' +
                     '<td>' + list_data[i].jumlah + ' </td>' +
                     '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="hapusData(\'' + list_data[i].id_data + '\')">Hapus</a></td>' +
                     '<td><a class="btn btn-danger btn-small" href="javascript:void(0)" onclick="lihatData(\'' + list_data[i].id_data + '\')">Lihat</a></td>' +
@@ -33,7 +33,7 @@ function loadOrderan() {
         }
  
  
-        $('#list-orderan').php(data_app);
+        $('#list-orderan').html(data_app);
         $('#list-orderan').hide();
         $('#list-orderan').fadeIn(100);
     }
@@ -48,7 +48,6 @@ function editData(id) {
             if (list_data[i].id_data == id) {
                 $("#eid_data").val(list_data[i].id_data);
                 $("#enama").val(list_data[i].nama);
-                $("#ekelas").val(list_data[i].kelas);
                 $("#ejumlah").val(list_data[i].jumlah);
                 list_data.splice(idx_data, 1);
             }
@@ -82,7 +81,6 @@ function lihatData(id) {
 function simpanData() {
  
     nama = $('#nama').val();
-    kelas = $('#kelas').val();
     tanggal = $('#jumlah').val();
  
     if (localStorage.list_data && localStorage.id_data) {
@@ -95,7 +93,7 @@ function simpanData() {
     }
  
     id_data++;
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'kelas': kelas, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'jumlah': jumlah });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
@@ -108,10 +106,9 @@ function simpanEditData() {
  
     id_data = $('#eid_data').val();
     nama = $('#enama').val();
-    kelas = $('#ekelas').val();
     tanggal = $('#ejumlah').val();
  
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'kelas': kelas, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'jumlah': jumlah });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
     gantiMenu('list-orderan');

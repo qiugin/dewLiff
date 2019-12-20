@@ -1,6 +1,6 @@
 window.onload = function() {
     const useNodeJS = false;   // if you are not using a node server, set this value to false
-    const defaultLiffId = "1653655688-BDL7zbr3";   // change the default LIFF value if you are not using a node server
+    const defaultLiffId = "1653655688-rNJ9AZv1";   // change the default LIFF value if you are not using a node server
 
     // DO NOT CHANGE THIS
     let myLiffId = "";
@@ -104,7 +104,7 @@ function registerButtonHandlers() {
 
     document.getElementById('openWindowButton').addEventListener('click', function() {
         liff.openWindow({
-            url: 'https://dewliff.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
+            url: 'https://dqheroku.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
             external: true
         });
     });
@@ -151,7 +151,6 @@ function simpanData() {
  
     
     nama = $('#nama').val();
-    kelas = $('#kelas').val();
     jumlah = $('#jumlah').val();
 
     if (!liff.isInClient()) {
@@ -159,9 +158,9 @@ function simpanData() {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Kakak "+nama+kelas+" memesan bakpia dengan jumlah "+jumlah+" !"
+            'text': "Kakak "+nama+" memesan bakpia dengan jumlah "+jumlah+" !"
         }]).then(function() {
-            alert('Pesanan kak '+nama+kelas+' sebanyak '+jumlah+' akan segera diproses');
+            alert('Pesanan kak '+nama+' sebanyak '+jumlah+' akan segera diproses');
         }).catch(function(error) {
             alert('Ada error nih');
         });
@@ -178,7 +177,7 @@ function simpanData() {
     }
  
     id_data++;
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'kelas': kelas, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'jumlah': jumlah });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
@@ -191,7 +190,6 @@ function simpanEditData() {
 
     id_data = $('#eid_data').val();
     nama = $('#enama').val();
-    kelas = $('#ekelas').val();
     jumlah = $('#ejumlah').val();
  
     if (!liff.isInClient()) {
@@ -199,16 +197,16 @@ function simpanEditData() {
     } else {
         liff.sendMessages([{
             'type': 'text',
-            'text': "Orderan kak "+nama+kelas+" diubah jadi "+jumlah
+            'text': "Orderan kak "+nama+" diubah jadi "+jumlah
         }]).then(function() {
-            alert('Orderan kak '+nama+kelas+' udah diubah');
+            alert('Orderan kak '+nama+' udah diubah');
         }).catch(function(error) {
-            alert('Maaf kak '+nama+kelas+' Ada error nih -_-');
+            alert('Maaf kak '+nama+' Ada error nih -_-');
         });
     }
  
  
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'kelas': kelas, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'jumlah': jumlah });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
     gantiMenu('list-orderan');
