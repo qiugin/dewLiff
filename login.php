@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
     <img src="assets/img/e.png" class="avatar">
         <h1>Masuk Sebagai Siswa</h1>
 
-        <form name="form" action="cek_login.php" id="loginF" method="post" >
+        <form name="form" action="" id="loginF" method="post" >
 
             <p>Username</p>
             <input type="text" id="username" name="username" placeholder="Enter Username">
