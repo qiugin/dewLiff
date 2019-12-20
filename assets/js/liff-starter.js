@@ -151,6 +151,7 @@ function simpanData() {
  
     
     nama = $('#nama').val();
+    NIM = $('#NIM').val();
     jumlah = $('#jumlah').val();
 
     if (!liff.isInClient()) {
@@ -177,7 +178,7 @@ function simpanData() {
     }
  
     id_data++;
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'jumlah': jumlah });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     localStorage.setItem('id_data', id_data);
     document.getElementById('form-data').reset();
@@ -190,6 +191,7 @@ function simpanEditData() {
 
     id_data = $('#eid_data').val();
     nama = $('#enama').val();
+    NIM = $('#eNIM').val();
     jumlah = $('#ejumlah').val();
  
     if (!liff.isInClient()) {
@@ -206,7 +208,7 @@ function simpanEditData() {
     }
  
  
-    list_data.push({ 'id_data': id_data, 'nama': nama, 'jumlah': jumlah });
+    list_data.push({ 'id_data': id_data, 'nama': nama, 'NIM': NIM, 'jumlah': jumlah });
     localStorage.setItem('list_data', JSON.stringify(list_data));
     document.getElementById('eform-data').reset();
     gantiMenu('list-orderan');

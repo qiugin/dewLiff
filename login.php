@@ -9,20 +9,20 @@ $form_error = '';
 if(isset($_POST['submit'])){
 
     // menyimpan data yang dikirim dari metode POST ke masing-masing variabel
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     // validasi login benar atau salah
-    if($email == 'dew@gmail.com' AND $password == 'dew'){
+    if($username == 'dew@gmail.com' AND $password == 'dew'){
 
-        // jika login benar maka email akan disimpan ke session kemudian akan di redirect ke halaman index
-        $_SESSION['email'] = $email;
+        // jika login benar maka username akan disimpan ke session kemudian akan di redirect ke halaman index
+        $_SESSION['username'] = $username;
         header('Location: index.php');
     }else{
 
         // jika login salah maka variabel form_error diisi value seperti dibawah
         // nilai variabel ini akan ditampilkan di halaman login jika salah
-        $form_error = '<p>Password atau email yang kamu masukkan salah</p>';
+        $form_error = '<p>Password atau username yang kamu masukkan salah</p>';
     }
 }
 
@@ -30,14 +30,14 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <head>
-    <title>Login Sederhana Tanpa Database</title>
+    <title>DewLiff - Login</title>
 </head>
 <body>
 
     <h3>Silakan Login</h3>
 
     <form method="POST" action="">
-        Email : <input type="email" name="email"><br>
+        Username : <input type="text" name="username"><br>
         Password : <input type="password" name="password"><br>
         <?php echo $form_error; ?>
         <input type="submit" name="submit" value="Login">

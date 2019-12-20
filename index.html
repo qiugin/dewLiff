@@ -2,19 +2,20 @@
 <html>
  
 <head>
-    <title>Toko Bakpia</title>
+    <title>DewLiff</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
  
-    <style>
+    <!-- <style>
         .table>thead>tr>th {
-            padding: 60px;
+            padding: 0px 75px;
         }
-    </style>
+    </style> -->
  
  
 </head>
@@ -52,38 +53,42 @@
                 </div><!-- /.container-fluid -->
               </nav>
 
-
-
-            <center>
-                <img src="assets/img/logo.jpg" class="img-fluid" alt="Responsive image">
-                <p>Kami menjual bakpia dengan sepenuh hati</p>
-            </center>
-            <!-- <ul class="nav nav-pills">
-                <li><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></li>
-                <li><a id="nav-list-orderan" href="javascript:void(0);" onclick="gantiMenu('list-orderan');">List Orderan</a></li>
-                <li><a id="nav-pre-order" href="javascript:void(0);" onclick="gantiMenu('pre-order');">Pre Order</a></li>
-            </ul> -->
             <div>
+                <h3>DewLiff merupakan Website managemen data mahasiswa</h3>
                 <p>
                     <a href="javascript:void(0);" id="nav-list-orderan" class="btn btn-primary" onclick="gantiMenu('list-orderan');" role="button">Daftar Mahasiswa</a>
-                    <a href="javascript:void(0);" id="nav-pre-order" class="btn btn-default" onclick="gantiMenu('pre-order');" role="button">Tambah Mahasiswa</a></p>
+                    <a href="javascript:void(0);" id="nav-pre-order" class="btn btn-default" onclick="gantiMenu('pre-order');" role="button">Tambah Mahasiswa</a>
+                </p>
             </div>
  
         </div>
+
+
         <div id="pre-order" class="well" style="display:none;">
             <form id="form-data">
                 <div id="nama-group" class="form-group">
                     <label>Nama:</label>
                     <input type="text" class="form-control" id="nama" name="nama">
                 </div>
+                <div id="NIM-group" class="form-group">
+                    <label>NIM:</label>
+                    <input type="text" class="form-control" id="NIM" name="NIM">
+                </div>
                 <div id="tanggal-group" class="form-group">
-                    <label>Jumlah:</label>
-                    <input type="number" class="form-control" id="jumlah" name="jumlah">
+                    <label>Kelas:</label>
+                    <!-- <input type="text" class="form-control" id="jumlah" name="jumlah"> -->
+                    <select id="jumlah" name="jumlah">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="audi">Audi</option>
+                      </select>
                 </div>
                 <input type="button" value="Simpan" onclick="simpanData();" class="btn btn-success btn-small" />
                 <input type="reset" value="Reset" onclick="" class="btn btn-warning btn-small" />
             </form>
         </div>
+
  
         <div id="edit-data" class="well" style="display:none;">
             <form id="eform-data">
@@ -97,9 +102,19 @@
                     <label>Nama:</label>
                     <input type="text" class="form-control" id="enama" name="nama">
                 </div>
+                <div id="NIM-group" class="form-group">
+                    <label>NIM:</label>
+                    <input type="text" class="form-control" id="eNIM" name="NIM">
+                </div>
                 <div id="tanggal-group" class="form-group">
-                    <label>Jumlah:</label>
-                    <input type="text" class="form-control" id="ejumlah" name="jumlah">
+                    <label>Kelas:</label>
+                    <!-- <input type="text" class="form-control" id="ejumlah" name="jumlah"> -->
+                    <select id="ejumlah" name="jumlah">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="audi">Audi</option>
+                      </select>
                 </div>
                 
                 <input type="button" value="Simpan" onclick="simpanEditData();" class="btn btn-success btn-small" />
@@ -121,18 +136,24 @@
                     <label for="disabled">Nama:</label>
                     <input type="text" class="form-control" id="lnama" name="nama" disabled>
                 </div>
+                <div id="NIM-group" class="form-group">
+                    <label for="disabled">NIM:</label>
+                    <input type="text" class="form-control" id="lNIM" name="NIM" disabled>
+                </div>
                 <div id="tanggal-group" class="form-group">
-                    <label for="disabled">Jumlah:</label>
+                    <label for="disabled">Kelas:</label>
                     <input type="text" class="form-control" id="ljumlah" name="jumlah" disabled>
                 </div>
                 <input type="button" value="Kembali" onclick="gantiMenu('list-orderan');"
                     class="btn btn-warning btn-small" />
             </form>
         </div>
- 
+
+        <!-- menampilkan data -->
         <div id="list-orderan" class="well">
-            Pre order sekarang yuk Bakpia nya, tinggal klik menu Pre Order.
+            
         </div>
+        <!-- akhir menampilkan data -->
  
         <!--Konten LIFF v2-->
  
@@ -193,4 +214,98 @@
 <script>
     loadOrderan()
 </script>
+
+<script>
+    function sortTable() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+      /*Make a loop that will continue until
+      no switching has been done:*/
+      while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 1; i < (rows.length - 1); i++) {
+          //start by saying there should be no switching:
+          shouldSwitch = false;
+          /*Get the two elements you want to compare,
+          one from current row and one from the next:*/
+          x = rows[i].getElementsByTagName("TD")[0];
+          y = rows[i + 1].getElementsByTagName("TD")[0];
+          //check if the two rows should switch place:
+          if (Number(x.innerHTML) > Number(y.innerHTML)) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          /*If a switch has been marked, make the switch
+          and mark that a switch has been done:*/
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+</script>
+
+<script>
+    function sortHead(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("myTable");
+      switching = true;
+      //Set the sorting direction to ascending:
+      dir = "asc"; 
+      /*Make a loop that will continue until
+      no switching has been done:*/
+      while (switching) {
+        //start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /*Loop through all table rows (except the
+        first, which contains table headers):*/
+        for (i = 1; i < (rows.length - 1); i++) {
+          //start by saying there should be no switching:
+          shouldSwitch = false;
+          /*Get the two elements you want to compare,
+          one from current row and one from the next:*/
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /*check if the two rows should switch place,
+          based on the direction, asc or desc:*/
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch= true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              //if so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /*If a switch has been marked, make the switch
+          and mark that a switch has been done:*/
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          //Each time a switch is done, increase this count by 1:
+          switchcount ++;      
+        } else {
+          /*If no switching has been done AND the direction is "asc",
+          set the direction to "desc" and run the while loop again.*/
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+    </script>
 </html>
